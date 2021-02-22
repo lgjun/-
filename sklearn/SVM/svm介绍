@@ -1,1 +1,33 @@
 SVM 全称是Support Vector Machine，中文名：支持向量机，是用于分类、回归和离群值检测的一组监督学习方法。
+SVM的优点是：
+1）高维空间的有效性
+2）对于维度数远大于样本数的实例依然有效
+3）决策函数使用训练点的子集（也叫支持向量），所以它也具有存储效率
+4）通用性：对决策函数可以指定不同的核函数。提供通用内核，但是也可以指定定制内核
+
+SVM的缺点：
+如果特征数远大于样本数，避免过度拟合，在选择核函数和正则化方法时是至关重要的；
+SVMs不直接提供可能性预测，它是通过昂贵的5倍交叉验证计算出来；
+
+sklearn中SVM支持两种输入：稠密矩阵(numpy.ndarray)、通过稠密矩阵转换(numpy.ndarray)以及稀疏矩阵(scipy.sparse)。然而利用SVM对稀疏
+矩阵数据进行预测，它必须对这些数据进行拟合。为了优化性能，用C-指定numpy.ndarray(稠密)或scipy.sparse.csr_matrix(稀疏)，同时选
+数据类型dtype=float64。
+
+1.4.1 分类
+1.4.2 回归
+支持向量分类(Support Vector Classification,SVC)的方法可以扩展到解决回归问题上。这个方法叫做支持向量回归(Support Vector Regression,SVR)。
+
+SVC生成的模型只依赖于训练集的子集，因为在建造模型时惩罚函数不关注超过边界的训练点。同样的，SVR生成的模型只依赖于训练集的子集，因为惩罚函数
+忽略那些预测值接近目标的样本。
+
+SVR有三种不同的实现方式：SVR, NuSVR, LinearSVR。LinearSVR提供一种比SVR更快的实现方式，但LinearSVR只考虑线性内核，然而NuSVR提供一种和SVR,LinearSVR稍微不同的实现方式。
+与支持向量分类(SVC)一样，SVR的拟合方法将会使用作为参数向量的X,y，y是浮点数而不是整数。
+
+# SVM核函数种类
+sklearn 中，内置核函数一共有四种：
+1) 线性核函数(Linear Kernel),公式: K(x,z) = x * z,普通的内积
+2) 多项式核函数(Polynomial Kernel)是线性不可分SVM常用的核函数之一,公式：K(x,z) = (γx * z + r)^d,其中γ、r、d需自己设定，比较麻烦
+3) 高斯核函数(Gaussian Kernel),在SVM中也称位径向基核函数(Radial Basis Function, RBF),公式: K(x,z) = exp(-γ||x-z||^2),其中γ大于0，要自己调参
+4)Sigmoid核函数(Sigmoid Kernel),也是线性不可分SVM常用的核函数之一，公式: K(x,z) = tanh(γx * z + r),其中γ和r需自己调参。
+一般情况下，对非线性数据使用默认的高斯核函数会有比较好的效果
+参考来源：https://www.cnblogs.com/pinard/p/6117515.html
