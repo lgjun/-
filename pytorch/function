@@ -1,0 +1,11 @@
+torch.rand(*size,out=None) # 返回一个张量，包含从区间[0,1)的均匀分布中抽取一组随机数；张量的形状由参数sizes定义
+torch.randn(*size,out=None) # 返回一个张量，包含了标准正态分布(均值为0，方差为1，即高斯白噪声)中抽取的一组随机数；张量的形状由参数sizes定义
+torch.randn_like()
+
+torch.zeros()
+torch.ones()
+torch.tensor()
+
+torch.add()
+torch.view() # 改变tensor的大小或形状
+.item() #有一个元素tensor，使用.item()来获得这个value
