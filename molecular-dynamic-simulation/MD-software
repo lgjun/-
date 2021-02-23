@@ -1,2 +1,19 @@
-1. HTMD
+1. HTMD-高通量分子动力学
+HTMD(High-Throughput Molecular Dynamics),是一个用python编写的可编程的可扩展平台，旨在解决数据生成和分析问题,并提供完整的工作空间来提高基于模拟发现的可重复性.
+
+HTMD包括 CHARMM 和 AMBER 力场的系统构建、抽样方法、聚类、分子模拟生成、自适应采样、亚马逊云界面、马尔可夫状态模型和可视化.
+因此一个简短的HTMD基本可以从PDB结构产生有用的数据,如弛豫时间尺度、平衡总体数量、亚稳态构象和动力学速率.
+
+HTMD提供一个通用的软件独立接口，用于管理不同的模拟软件的模拟,目前支持ACEMD 和 GROMACS使用的XTC轨迹文件格式.
+
+HTMD软件、文档、教程和实例可从https://software.acellera.com/docs/latest/htmd/index.html 下载，学术用户可免费下载
+
+参考博文：https://zhuanlan.zhihu.com/p/161859363
+
 2. ACEMD
+ACEMD 是一款生物分子动力学模拟软件包，该软件对 NVIDIA GPU 作了专门的优化,在单工作站上，ACEMD 已达到现有分子动力学模拟引擎的效能上限，是一只最快的生物分子动力学模拟软件。
+ACEMD 支持CHARMM、AMEBR、OPLS和Martini力场计算。
+
+Acellera软件包括HTMD、ACEMD、AceCloud、Parameterize、AceFlow和ACEMD3模块。
+
+参考博文：https://zhuanlan.zhihu.com/p/161878206, https://software.acellera.com/docs/latest/acemd3/index.html
