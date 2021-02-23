@@ -4,4 +4,5 @@
 
 记录工作中遇到的问题，学习的知识，每天总结
 
-机器学习期刊：https://www.nature.com/natmachintell/
+机器学习期刊：
+Nature machine intelligence: https://www.nature.com/natmachintell/
