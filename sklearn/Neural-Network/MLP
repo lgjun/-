@@ -1,0 +1,15 @@
+神经网络模块有重要的两个类: MLPClassifier(分类)和 MLPRegressor(回归)
+多层感知机(Multi-layer Perceptron, MLP)是一种监督学习算法,前馈人工神经网络模型，本质上是一个全连接神经网络.
+MLPClassifier和MLPRegressor都使用参数alpha作为正则化(L2正则化)系数
+
+多层感知机回归( MLPRegressor,MLP )
+参数：
+  1) hidden_layer_sizes=(10): 元组,同时指定隐藏层,层数+每层单元数 比如(10,20)两层, 第一层10个隐藏单元,第二层20个单元,两层隐藏层，也就是3层神经网络
+  2) activation = "relu": 隐藏层的激活函数, {'identity','logistic','tanh','relu'}四种可选, 默认是'relu'
+      'identity': 无操作激活，对实现线性瓶颈很有用，返回 f(x) = x
+      'logistic': 用sigmoid函数,返回 f(x) = 1 / (1 + exp(-x))
+      'tanh': 用双曲线tan函数, 返回 f(x) = tanh(x)
+      'relu': 修正线性单元函数, 返回 f(x) = max(0,x)
+    线性的缺点是,线性函数的组合仍然是线性函数, 意味着无论堆积多少层网络, 如果每一层都使用线性激活函数, 那这些曾最终等效于一层.
+  3) solver = 'adam': 权重优化求解器, {'lbfgs','sgd','adam'}三种可选, 默认是'adam'
+      'lbfgs' 是准牛顿方法优化; 'sgd' 是随机梯度下降; 'adam' 是指由Kingma, Diederik和Jimmy Ba提出的基于随机梯度的优化器
