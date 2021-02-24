@@ -1,0 +1,4 @@
+回归模型评价： MAE,MSE,r^2
+MAE: mean_absolute_error, 平均绝对误差
+MSE: mean_square_error, 均方误差
+r^2: r2_score, 可决系数
