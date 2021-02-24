@@ -4,7 +4,7 @@ MLPClassifier和MLPRegressor都使用参数alpha作为正则化(L2正则化)系�
 
 多层感知机回归( MLPRegressor,MLP )
 参数：
-  1) hidden_layer_sizes=(10): 元组,同时指定隐藏层,层数+每层单元数 比如(10,20)两层, 第一层10个隐藏单元,第二层20个单元,两层隐藏层，也就是3层神经网络
+  1) hidden_layer_sizes=(10): 元组,同时指定隐藏层,层数+每层单元数 比如(10,20)两层, 第一层10个隐藏单元,第二层20个单元,两层隐藏层，也就是4层神经网络
   
   2) activation = "relu": 隐藏层的激活函数, {'identity','logistic','tanh','relu'}四种可选, 默认是'relu'
       'identity': 无操作激活，对实现线性瓶颈很有用，返回 f(x) = x
