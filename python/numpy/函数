@@ -1,0 +1,13 @@
+1. np.random.uniform(low,high,size)
+    功能: 从一个均匀分布[low,high)中随机采样,定义域是左闭右开
+    low: 采样下界,float类型,默认值为0;
+    high: 采样上界,float类型,默认值为1;
+    size: 输出样本数目,为int或元组(tuple)类型
+    
+2. np.random.normal(loc=0,scale=1e-2,size=shape)
+    loc(float): 正态分布的均值,对应着这个分布的中心.loc=0说明这是一个以Y轴为对称轴的正态分布
+    scale(float): 正态分布的标准差,对应分布的宽度,scale越大,正态分布的曲线越平缓; scale越小,曲线越陡峭
+    size(int或整数元组):输出的值赋在shape里,默认为None
+    
+3. reshape()是数组对象中的方法,用于改变数组的形状
+    reshape函数生成的新数组和原始数组公用一个内存,也就是说,不管是改变新数组还是原始数组的元素，另一个数组也会随之改变
