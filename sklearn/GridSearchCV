@@ -1,0 +1,16 @@
+GridSearchCV,存在的意义就是调参, 把参数输进去,就能返回最好的模型参数组合; 用于系统地遍历多种参数组合，通过交叉验证确定最佳效果参数.
+
+适用于小数据集; 当数据量比较大的时候可以用一个快速调优的方法--坐标下降.
+
+GridSearchCV函数的参数：
+  sklearn.model_selection.GridSearchCV(estimator, param_grid, *, scoring=None, n_jobs=None, refit=True, cv=None, verbose=0, 
+                                        pre_dispatch='2*n_jobs', error_score=nan, return_train_score=False)
+                                        
+  estimator: 所使用的分类器
+  param_grid: 值为字典或者列表, 即所需要优化的参数的取值
+  scoring=None: 模型评价标准, 默认None, 这时需要使用score函数
+  n_jobs=None: 并行数, int: 个数, -1: 跟CPU核数一致, 1: 默认值
+  refit=True: 默认为True, 程序将会以交叉验证训练集得到的最佳参数, 重新对所有可能的训练集和测试集进行,作为最终用于性能评估的最佳模型参数.
+    即在搜索参数结束后，用最佳参数结果再次fit一遍全部数据集.
+  cv=None: 交叉验证参数,默认为None, 使用三折交叉验证. 指定fold数量, 默认为3, 也可以是yeild训练/测试数据的生成器
+  
