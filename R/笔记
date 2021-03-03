@@ -1,0 +1,5 @@
+1. R 安装 参考这篇博文：https://blog.csdn.net/qq_35180983/article/details/82226373
+2. Bio3d 安装：
+  打开R，输入：install.packages("bio3d", dependencies=TRUE) 就可安装Bio3d
+  
+  Bio3d 进行互相关分析：https://blog.chembiosim.com/cross-correlation-in-bio3d/
