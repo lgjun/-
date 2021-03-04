@@ -8,3 +8,7 @@
 Nature machine intelligence: https://www.nature.com/natmachintell/
 
 蛋白质网站：https://www.genome.jp/aaindex/
+
+NAMD: 
+      http://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/ # 官方网站
+      http://muchong.com/html/201107/3351593.html  #小木虫
