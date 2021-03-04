@@ -1,0 +1,15 @@
+gmx covar：用来生成轨迹的协方差矩阵并计算本征向量和本征值
+gmx covar -f 输入轨迹文件
+          -s 输入的结构文件
+          -n [输入的index文件]
+          -o 输出的本征值文件
+          -v 输出的本征向量文件
+          -av 输出的平均结构文件
+          -l 输出的日志文件
+          -ascii [输出的协方差矩阵数据文件]
+          -xpm [图形描述的N阶协方差矩阵]
+          -xpma [图形描述的3N阶协方差矩阵]
+          
+gmx covar -s md.gro -f md.xtc -o eigenvalues.xvg -v eigenvector.trr -xpma covpic.xpm
+运行程序会问将哪些范围原子做align,选 C-alpha,说明每帧的C-alpha 将会朝着输入的结构文件做align; 然后会问对哪些原子做PCA, 选C-alpha(也可以与刚才选的不同)
+
