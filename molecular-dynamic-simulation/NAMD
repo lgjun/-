@@ -1,1 +1,29 @@
-1. NAMD需要四个文件跑动力学模拟：.pdb、.pdf、force field parameter file、configuration file
+1. NAMD需要四个文件跑动力学模拟：
+  pdb file、psf(Protein Structure file)、force field parameter file、configuration file
+  pdb.file: 为体系存储原子坐标或速度
+  psf.file: 存储蛋白的结构信息, 例如各种成键关系
+  force field parameter file: CHARMM, X-PLOR, AMBER,和GROMCAS四种力场类型, NAMD都可用
+  configuration.file: 用户在其中指定NAMD在运行模拟时应该采用的所有选项, 配置文件告诉了NAMD模拟应该怎么跑
+  
+2. 四个文件来源：
+  pdb文件可从Protein Data Bank获得;
+  force filed parameter file: 从网址中http://mackerell.umaryland.edu/charmm_ff.shtml获得, 或者在NAMD官网教程中有：http://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-files.tar.gz
+  * psf.file: 
+  1UBQ.pdb 导入到 VMD 中,打开 Extensions -> Tk Console,输入： set ubq [atomselect top protein]
+                                                            $ubq writepdb ubqp.pdb 
+                                                            这样ubqp.pdb中只保留纯蛋白,而没有其它物质
+  1) VMD提供一个自动生成 psf 插件, 打开VMD,载入ubqp.pdb,依次打开 Extensions -> Modeling -> Automatic PSF Builder, 点击 I'm feeling lucky, 
+  可生成ubqp_autopsf.log, ubqp_autopsf.pdb, ubqp_autopsf.psf,ubqp_autopsf_formatted.pdb四个.
+  2) 在VMD命令行窗口依次输入: 
+                        package require psfgen              #VMD上运行psfgen
+                        topology top_all27_prot_lipid.inp   #加载拓扑文件top_all27_prot_lipid.inp
+                        pdbalias residue HIS HSE            #在拓扑文件中将组氨酸的名称更改, HSE是组氨酸的3种命名之一, 根据它侧链的质子化状态
+                        pdbalias atom ILE CD1 CD            #异亮氨酸残基命名中命名为"CD1"的原子被重命名为"CD"
+                        segment U {pdb ubqp.pdb}            #创建一个名为 U 的文件, 包含来自udqp.pdb中的所有原子, segment命令还添加了氢原子
+                        coordpdb ubqp.pdb U                 #坐标从ubq.pdb中读取, 残基名和原子名相匹配，旧的字段会被新的字段(来自U)覆盖
+                        guesscoord                          #根据拓扑文件中残基定义补足丢失的氢原子
+                        writepdb ubq.pdb                    #写入一个新的pdb文件
+                        writepsf ubq.psf
+   最终生成ubq.pdb和ubq.psf, 把上面几条命令可保存成ubq.pgn脚本,在linux终端上输入: vmd -dispdev text -e ubq.pgn, 就可生成ubq.pdb和ubq.psf.
+                        
+                        
