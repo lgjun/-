@@ -6,3 +6,5 @@
 
 机器学习期刊：
 Nature machine intelligence: https://www.nature.com/natmachintell/
+
+蛋白质网站：https://www.genome.jp/aaindex/
