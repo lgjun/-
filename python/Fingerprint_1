@@ -1,0 +1,38 @@
+RDKit 是一个用于化学信息学的开源工具包，基于对化合物2D和3D分子操作，利用机器学习方法进行化合物描述符
+生成，fingerprint生成，化合物结构相似性计算和2D、3D分子展示等。基于python语言调用。
+
+分子指纹（Molecular Fingerprint）
+分子指纹是一种分子的抽象表征，它将分子转化(编码)为一系列比特串(即比特向量, bit vector), 然后可以很容易
+地在分子间进行比较。典型流程是提取分子的结构特征，然后哈希生成比特向量。
+
+分子指纹：2D指纹、3D指纹；基于子结构的指纹(substructure key-based fingerprint)、基于拓扑或路径的指纹(topological or path-based fingerprint)和圆形指纹(circular fingerprint)
+
+1.1 基于子结构的指纹(substructure key-based fingerprint)
+基于子结构的指纹根据给定结构列表中某些子结构或特征的存在与否来设置位串。
+MACCS采用SMARTS编码的子结构，根据子结构种类数量不同有两个变种：一种是166，另一种是960.166是最常用的，因为它的长度相对较小，但涵盖了药物发现和虚拟筛选时的大多数感兴趣的化学特征。
+PubChem指纹：具有881个子结构，涵盖了广泛、多样的不同子结构和官能团，PubChem将该指纹用于相似性搜索
+
+1.2 基于拓扑或路径的指纹图谱(topological or path-based fingerprint)
+通过分析从一个原子开始直至到达指定数量键的路径(通常为线性)上所有的分子片段，然后对每一个路径中的片段进行哈希，产生指纹
+
+此类指纹适用于任意一个分子，并可以调整其长度，可以用于快速的子结构搜索与分子过滤
+Daylight 指纹是此类型指纹中最突出的代表
+
+1.3 圆形指纹图谱(Circular fingerprints)
+
+圆形指纹也是一种哈希的拓扑指纹，与基于路径的指纹不同之处在于：不是在分子中寻找路径，而是记录每个从原子出发直到指定半径内的环境
+此类指纹不适用于子结构查询(因为相同片段可能具有不同的环境)，但广泛用于完整结构的相似性搜索
+
+Molprint2D 是由Bender等[2004]开发，常用于QSAR研究与比较分子的相似性
+
+ECFP：从Morgan算法衍生出来的扩展连接指纹(Extended-Connectivity Fingerprints, ECFP)已经成为圆形指纹的行业标准方法，专门用于构效关系研究
+
+FCFP(Functional-Class Fingerprints):
+FCFP是ECFP的一种变体，进一步被抽象：它不是索引环境中的特定原子，而是索引该原子的作用。因此具有相同或相似功能的不同原子或基团在该指纹里是没有区别的，这使得它可以作为一种药效团指纹
+
+1.4 混合指纹(hybrid fingerprint) : 将不同指纹方法产生的比特串组合成一个新的比特串
+UNITY 2D ：UNITY 2D是SYBYL软件包UNITY模块使用的一种指纹图谱，它组合了基于子结构与连接路径片段两种方法，长度为988比特位。
+MP-MFP : MP-MFP指纹包含了171比特位，其中110比特位编码化学子结构，61位编码了性质描述符
+
+
+参考博文：http://blog.molcalx.com.cn/2019/01/29/fingerprint.html
