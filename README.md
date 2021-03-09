@@ -12,3 +12,6 @@ Nature machine intelligence: https://www.nature.com/natmachintell/
 NAMD: 
       http://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/ # 官方网站
       http://muchong.com/html/201107/3351593.html  #小木虫
+
+pytorch: 
+中文文档：http://pytorch.panchuang.net/SecondSection/what_is_pytorch/
