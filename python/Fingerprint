@@ -1,0 +1,11 @@
+RDKit 是一个用于化学信息学的开源工具包，基于对化合物2D和3D分子操作，利用机器学习方法进行化合物描述符
+生成，fingerprint生成，化合物结构相似性计算和2D、3D分子展示等。基于python语言调用。
+
+分子指纹（Molecular Fingerprint）
+分子指纹是一种分子的抽象表征，它将分子转化(编码)为一系列比特串(即比特向量, bit vector), 然后可以很容易
+地在分子间进行比较。典型流程是提取分子的结构特征，然后哈希生成比特向量。
+
+分子指纹：2D指纹、3D指纹；基于子结构的指纹(substructure key-based fingerprint)、基于拓扑或路径的指纹(topological or path-based fingerprint)和圆形指纹(circular fingerprint)
+
+1.1 基于子结构的指纹(substructure key-based fingerprint)
+基于
