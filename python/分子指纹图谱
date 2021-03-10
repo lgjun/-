@@ -42,3 +42,4 @@ MP-MFP : MP-MFP指纹包含了171比特位，其中110比特位编码化学子�
 参考博文/网址：http://blog.molcalx.com.cn/2019/01/29/fingerprint.html
               http://www.rdkit.org/docs/Install.html
 
+python2 版本的RDKIT：https://sourceforge.net/projects/rdkit/
