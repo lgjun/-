@@ -6,6 +6,8 @@
 
 机器学习期刊：
 Nature machine intelligence: https://www.nature.com/natmachintell/
+Bioinfomatics: https://academic.oup.com/bioinformatics
+JCIM: https://pubs.acs.org/journal/jcisd8
 
 蛋白质网站：https://www.genome.jp/aaindex/
 
