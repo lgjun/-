@@ -1,4 +1,8 @@
-RDKit 是一个用于化学信息学的开源工具包，基于对化合物2D和3D分子操作，利用机器学习方法进行化合物描述符
+RDKit 
+
+Installation:  conda install -c conda-forge rdkit
+
+一个用于化学信息学的开源工具包，基于对化合物2D和3D分子操作，利用机器学习方法进行化合物描述符
 生成，fingerprint生成，化合物结构相似性计算和2D、3D分子展示等。基于python语言调用。
 
 分子指纹（Molecular Fingerprint）
@@ -35,4 +39,6 @@ UNITY 2D ：UNITY 2D是SYBYL软件包UNITY模块使用的一种指纹图谱，�
 MP-MFP : MP-MFP指纹包含了171比特位，其中110比特位编码化学子结构，61位编码了性质描述符
 
 
-参考博文：http://blog.molcalx.com.cn/2019/01/29/fingerprint.html
+参考博文/网址：http://blog.molcalx.com.cn/2019/01/29/fingerprint.html
+              http://www.rdkit.org/docs/Install.html
+
