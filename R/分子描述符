@@ -14,7 +14,9 @@ To install this package,start R(version "4.0") and enter:
       install.packages("BiocManager")
 
   BiocManager::install("Rcpi")
-  
-  参考文献：
+To view documentation for the version of this package installed in your system, start R and enter: browseVignettes("Rcpi")
+
+参考文献/网站：
   https://doi.org/10.1186/s13321-018-0258-y
-  
+  https://bioconductor.org/packages/release/bioc/html/Rcpi.html
+  http://127.0.0.1:22200/session/Rvig.95387752338.html
