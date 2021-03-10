@@ -1,0 +1,20 @@
+1. PyDPI 可计算小分子和蛋白的描述符
+
+Installation
+  pip inatall pydpi
+
+参考文献：https://pubs.acs.org/doi/10.1021/ci400127q
+
+2. Rcpi 化合物-蛋白质相互作用的分子信息学工具包，可计算小分子和蛋白的描述符
+
+Installation
+To install this package,start R(version "4.0") and enter:
+
+  if (!requireNamespace("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+
+  BiocManager::install("Rcpi")
+  
+  参考文献：
+  https://doi.org/10.1186/s13321-018-0258-y
+  
